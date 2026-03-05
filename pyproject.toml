@@ -3,30 +3,41 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "system-monitor-mcp"
-version = "1.0.0"
-description = "MCP server for real-time system monitoring — CPU, RAM, disk, network, and process management"
+name = "desktop-commander-mcp"
+version = "2.0.0"
+description = "MCP server for full desktop control — system monitoring, window management, screenshots, clipboard, app launcher, and more"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
     {name = "Mikhail"}
 ]
-keywords = ["mcp", "system-monitor", "processes", "cpu", "ram", "claude"]
+keywords = [
+    "mcp", "desktop", "system-monitor", "window-manager", "screenshot",
+    "clipboard", "processes", "cpu", "ram", "claude", "automation",
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
     "Topic :: System :: Monitoring",
+    "Topic :: Desktop Environment",
 ]
 dependencies = [
     "mcp>=1.0.0",
     "psutil>=5.9.0",
+    "Pillow>=10.0.0",
+    "pywin32>=306; sys_platform == 'win32'",
 ]
 
 [project.scripts]
-system-monitor-mcp = "system_monitor_mcp.server:main"
+desktop-commander-mcp = "system_monitor_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/19miha99/system-monitor-mcp"
+Repository = "https://github.com/19miha99/system-monitor-mcp"
+Issues = "https://github.com/19miha99/system-monitor-mcp/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
